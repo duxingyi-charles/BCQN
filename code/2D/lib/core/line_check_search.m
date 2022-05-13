@@ -12,6 +12,7 @@ if get_energy_type() > 0
 
     balp = get_feasible_step_size(p, u);
     alp = min(1.0, balp);
+%     alp = 1.0;
 
     un = u + alp * p;
     lhs = energy_value(un);
