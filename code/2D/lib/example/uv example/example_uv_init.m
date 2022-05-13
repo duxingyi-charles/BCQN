@@ -3,15 +3,24 @@ global ver_num dirichlet en_type cmin cmax K q
 
 colormap(jet);
 
-en_type = 'iso';
+en_type = 'mips';
 
-load_input_mesh('../data/bull_1');
+% load_input_mesh('../data/bull_1');
+load_input_mesh('/Users/charlesdu/MEGAsync/winshare/BCQN/input/bunny_i_G');
 
-V0 = get_uv_init();
+% mask = [1];
+
+mask = load('/Users/charlesdu/MEGAsync/winshare/BCQN/input/bunny_i_G_handles.mat');
+mask = mask.Expression1;
+
+% V0 = get_uv_init();
+
+V0 = load('/Users/charlesdu/MEGAsync/winshare/BCQN/PN1/bunny_i_G_result.mat');
+V0 = V0.Expression1;
 
 q = reshape(V0', ver_num * 2, 1);
 
-mask = [1];
+%
 
 dirichlet = zeros(2 * ver_num, 1);
 dirichlet([2 * mask - 1, 2 * mask]) = 1;
