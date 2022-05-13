@@ -1,4 +1,5 @@
-function [ ] = mlbfgs_lcp_split_solver( un, is_uv_mesh )
+% function [ ] = mlbfgs_lcp_split_solver( un, is_uv_mesh )
+function vert = mlbfgs_lcp_split_solver( un, is_uv_mesh )
 %PPAP_SOLVER Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -24,11 +25,11 @@ AcT = Ac';
 
 grad = grad_function(u);
 
-for i = 0 : 1000
+for i = 0 : 10000
     
     i
 
-    plot_result(u, i);
+    vert = plot_result(u, i);
 
     grads = grad;
   

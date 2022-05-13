@@ -1,6 +1,10 @@
-function [ ] = newton_solver( un, is_uv_mesh )
+% function [ res_u ] = newton_solver( un, is_uv_mesh )
+function vert = newton_solver( un, is_uv_mesh )
+
 %NEWTON_SOLVER Summary of this function goes here
 %   Detailed explanation goes here
+
+global total_iter
 
 u = un;
 p = 0 * u;
@@ -11,11 +15,11 @@ order = get_ordering(u);
 
 'newton'
 
-for i = 0 : 180
+for i = 0 : 1080
     
     i
     
-    plot_result( u, i )
+    vert = plot_result( u, i );
 
     [grad, H] = grad_hessian_function(u, 0);
 
@@ -25,6 +29,8 @@ for i = 0 : 180
     
     if stop_check(un, u, grad)
         
+        total_iter = i
+        
         break;
         
     end  
@@ -32,6 +38,7 @@ for i = 0 : 180
     u = un;
     
 end
+
 
 end
 
