@@ -4,7 +4,7 @@ function [] = load_input_mesh( file_name )
 
 global exam_mesh ver_num tri_num obj_tri
 
-addpath('./data');
+% addpath('./data');
 
 exam_mesh = struct('v', [], 'n', [], 'u', [], 'f', [], 'e', [], 'bounds', []);
 
