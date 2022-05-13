@@ -1,4 +1,5 @@
-function [ ] = plot_result( u_x, frame )
+% function [ ] = plot_result( u_x, frame )
+function vert = plot_result( u_x, frame )
 %PLOT_RESULT Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -63,6 +64,8 @@ drawnow;
 % set(gcf, 'PaperPosition',[0 0 12 12]);
 % 
 % print(file, '-dbmp', sprintf(strcat('../result/image%d.bmp'), frame), '-r400')  
+
+vert = r_q_x;
 
 end
 
